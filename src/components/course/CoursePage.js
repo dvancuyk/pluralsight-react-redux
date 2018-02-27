@@ -8,12 +8,19 @@ class CoursesPage extends React.Component {
     this.state = {
       course: { title: null }
     };
+
+    this.onTitleChange = this.onTitleChange.bind(this);
+    this.onSave = this.onSave.bind(this);
   }
 
   onTitleChange(event){
     const course = this.state.course;
     course.title = event.target.value;
     this.setState({course: course});
+  }
+
+  onSave() {
+    alert(`Saving ${this.state.course.title}`);
   }
 
   render() {
@@ -26,7 +33,7 @@ class CoursesPage extends React.Component {
           value={this.state.course.title} />
 
         <input type="submit"
-          onClick={this.onTitleChange}
+          onClick={this.onSave}
           value="Save" />
       </div>
     );
