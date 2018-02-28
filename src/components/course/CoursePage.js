@@ -30,6 +30,7 @@ CoursesPage.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
     courses: state.courses // Aligns with the property defined in the reducers/index.js
   };
