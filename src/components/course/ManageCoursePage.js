@@ -20,7 +20,7 @@ class ManageCoursePage extends React.Component {
         <CourseForm
           course={this.state.course}
           errors={this.state.errors}
-          allAuthors= {[]}
+          allAuthors= {this.props.authors}
            />
     );
   }
@@ -43,8 +43,13 @@ function mapStateToProps(state, ownProps) {
     length: ''
   };
 
+  let authorsList = state.authors.map(author => {
+          return {value: author.id, text: `${author.firstName} ${author.lastName}`};
+        });
+
   return {
-    course: course
+    course: course,
+    authors: authorsList
   };
 }
 
