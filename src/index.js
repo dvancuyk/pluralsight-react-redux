@@ -7,10 +7,12 @@ import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {Provider} from 'react-redux';
 import {loadCourses} from './actions/courseActions';
+import {loadAuthors} from './actions/authorActions';
 import configureStore from './store/configureStore';
 
 const store = configureStore();
 store.dispatch(loadCourses());
+store.dispatch(loadAuthors());
 
 render(
     <Provider store={store}>
